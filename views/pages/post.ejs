@@ -1,0 +1,211 @@
+<html>
+
+    <head>
+        <title>Hot Dawg Forum</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="./common/post-style.css" />
+    </head>
+
+    <body class="background">      
+        <div class="header">
+            <a href="index.html"><img class="headerLogo" src="logo.png"> Hot Dawgs</a>
+            <a href="userprofile.html">My Profile</a>
+            <input name="search" type="text" placeholder="Search"/>
+            <a id="logout" href="login.html">Log Out</a>
+        </div>
+        <br>
+        <div id="info" class="border">
+            <div id="avatarDiv">
+                <img src="alexcrop.png" id="avatarImg" alt="avatar">
+            </div>
+            
+            <div>
+                <div class="details font">
+                    <button class="profile"><a class="commentNameClickable" href="userprofile.html">AlexRotorReyes</a></button> <span>07/12/2018 1:02</span>
+                </div>
+                <div class="title font">
+                    <span>The Queen's Dog Ran Away!</span>
+                </div>
+            </div>
+            <div class="vote">
+                <div>
+                    <div>
+                    <button class="voteBtn"><img src="upvote.png" class="voteImg"></button>
+                    </div>
+                    <div>    
+                    <button class="voteBtn"><img src ="downvote.png" class="voteImg"></button>
+                    </div>
+                </div>    
+                <span class="voteCount font">12</span>
+            </div>
+        </div>
+        <br>
+        <div class="contentContainer border font">
+            <div class="content">
+                Who let this dog out? Brits were shocked upon finding out this news.<br><br>
+                
+                Earlier this morning, while I was walking down the one of the streets neaby my house, I swear that I saw the Queen's dog. I believe it was willow because it looked just like him! A small corgi who was wearing the collar I heard that only the Queens dog wears!!!
+            </div>
+        </div>
+        <br>
+        <div id="comments" class="border font">
+            <div class="myComment">
+                <textarea class="inputComment" cols="30" rows="10" placeholder="Enter comment here"></textarea>
+            </div>
+            <div class="CommentContainer">
+                <div class="sharing">
+                    <div class="voteComment">
+                        <div>
+                            <div>
+                                <button class="voteBtn"><img src="upvote.png" class="voteImg"></button>
+                            </div>
+                            <div>    
+                                <button class="voteBtn"><img src ="downvote.png" class="voteImg"></button>
+                            </div>
+                        </div>    
+                        <span class="voteCount font">14</span>
+                    </div>
+                </div>
+                <div class="commentDetails">
+                    <div class ="commentNameTime"><button class="profile" ><a class="commentNameClickable" href="userprofilePao.html">PaoloDelosReyes</a></button> <span>07/12/2018 2:03</span></div>
+                    <div class ="commentProper">OMG!!!! How'd he look like??</div>
+                    <div class="replyContainer">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            <img src="reply.png" class="replyImg font"> Reply
+                        </button>
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Comment</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <textarea class="inputReply" cols="30" rows="10" placeholder="Enter comment here"></textarea>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button type="button" class="btn"> 
+                            <img src="edit.png" class="replyImg font"> Edit
+                        </button>
+                        <button type="button" class="btn btnDel"> 
+                            <img src="waste.png" class="replyImg font"> Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="CommentContainer indent1">
+                <div class="sharing">
+                    <div class="voteComment">
+                        <div>
+                            <div>
+                                <button class="voteBtn"><img src="upvote.png" class="voteImg"></button>
+                            </div>
+                            <div>    
+                                <button class="voteBtn"><img src ="downvote.png" class="voteImg"></button>
+                            </div>
+                        </div>    
+                        <span class="voteCount font">8</span>
+                    </div>
+                </div>
+                <div class="commentDetails">
+                    <div class ="commentNameTime"><button class="profile"><a class="commentNameClickable" href="userprofileTadhg.html">TadhgMcCarthy</a></button> <span>07/12/2018 3:04</span></div>
+                    <div class ="commentProper">WAS HE BROWN WITH A WHITE UNDER BELLY?</div>
+                    <div class="replyContainer">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            <img src="reply.png" class="replyImg font"> Reply
+                        </button>
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Comment</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <textarea class="inputReply" cols="30" rows="10" placeholder="Enter comment here"></textarea>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button type="button" class="btn"> 
+                            <img src="edit.png" class="replyImg font"> Edit
+                        </button>
+                        <button type="button" class="btn btnDel"> 
+                            <img src="waste.png" class="replyImg font"> Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="CommentContainer">
+                <div class="sharing">
+                    <div class="voteComment">
+                        <div>
+                            <div>
+                                <button class="voteBtn"><img src="upvote.png" class="voteImg"></button>
+                            </div>
+                            <div>    
+                                <button class="voteBtn"><img src ="downvote.png" class="voteImg"></button>
+                            </div>
+                        </div>    
+                        <span class="voteCount font">18</span>
+                    </div>
+                </div>
+                <div class="commentDetails new">
+                    <div class ="commentNameTime"><button class="profile"><a class="commentNameClickable" href="userprofile.html">AlexRotorReyes</a></button> <span>07/12/2018 4:05</span></div>
+                    <div class ="commentProper">It's ok guys! I managed to follow the dog and hand it over to the police haha.</div>
+                    <div class="replyContainer">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                            <img src="reply.png" class="replyImg font"> Reply
+                        </button>
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Comment</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <textarea class="inputReply" cols="30" rows="10" placeholder="Enter comment here"></textarea>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button type="button" class="btn"> 
+                            <img src="edit.png" class="replyImg font"> Edit
+                        </button>
+                        <button type="button" class="btn btnDel"> 
+                            <img src="waste.png" class="replyImg font"> Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</html>

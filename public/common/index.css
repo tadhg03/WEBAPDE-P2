@@ -1,0 +1,289 @@
+.background{
+    background: #efefef;
+}
+
+.headerLogo{
+    width: 20x;
+    height: 20px;
+    border-radius: 5px;
+    float: left;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+.header{
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: -8px;
+    position: relative;
+    background-color: #5ba5ef;
+    height: 50px;
+}
+
+input{
+    border: none;
+    border-style: none;
+    margin: 0px;
+    padding: 0px;
+    font-family: Tahoma;
+    font-weight: bold;
+    color: dimgrey;
+}
+
+input:hover{
+    cursor: pointer;
+}
+
+.header a{
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 18px;
+    font-family: Tahoma;
+}
+
+#logout{
+    float: right;
+}
+
+.header a:hover{
+    background-color: #6493c1;
+    color: white;
+    height: 50px;
+}
+
+.header input[type=text]{
+    float: left;
+    padding: 4px 4px;
+    border: none;
+    margin-top: 12px;
+    margin-right: 16px;
+    margin-left: 292px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    width: 500px;
+    
+}
+
+.container{
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.userPost{
+    margin-top: 5px;
+    margin-left: 5px;
+    border-style: groove;
+    background: white;
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.userPhoto1{
+    float:left;
+    height: 45px;
+    width: 45px;
+    margin-top: 2px;
+    margin-right: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-image: url(alexcrop.png);
+}
+
+.userPhoto2{
+    float:left;
+    height: 45px;
+    width: 45px;
+    margin-top: 2px;
+    margin-right: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-image: url(tadhg.jpg);
+}
+
+.userPhoto3{
+    float:left;
+    height: 45px;
+    width: 45px;
+    margin-top: 2px;
+    margin-right: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-image: url(pao.jpg);
+}
+
+.titleName{
+    width: 500px;
+    height: 30px;
+    margin: 0% 35%;
+    margin-top: 1%;
+    border-radius: 5px;
+    border-style: groove;
+    font-family: Tahoma;
+}
+
+.title a{
+    font-family: Tahoma;
+    font-weight: bold;
+    color: dimgrey;
+}
+
+.description{
+    height: 45px;
+    width: 600px;
+    font-family: Tahoma;
+    font-style: italic;
+    margin-left: 15px;
+}
+
+.downvote{
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-top: 9px;
+    margin-right: 10px;
+    margin-left: 5px;
+    background-image: url(downvote.png);
+}
+
+.comment{
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-top: 12px;
+    margin-right: 10px;
+    margin-left: 5px;
+    font-family: Tahoma;
+}
+
+.upvote{
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-top: 9px;
+    margin-right: 10px;
+    margin-left: 5px;
+    background-image: url(upvote.png);
+}
+
+.author{
+    font-family: Tahoma;
+    color: black;
+    margin-top: 5px;
+
+}
+.contentpost{
+    width: 500px;
+    height: 100px;
+    margin: 0% 35%;
+    border-radius: 5px;
+    border-style: groove;
+    font-family: Tahoma
+}
+
+.publishPost{
+    width: 70px;
+    height: 25px;
+    background-color: #5ba5ef;
+    color: white;
+    font-family: Tahoma;
+    margin: 0% 67%;
+    border-radius: 5px;
+}
+
+.footer{
+    position:sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #5ba5ef;
+    padding: 4px 5px;
+}
+
+.w3-modal-content{
+    width: 5px;
+    height: 500px;
+}
+.w3-container{
+    width: 5px;
+    height: 0px;
+}
+
+.createButton{
+    float: left;
+    font-family: Tahoma;
+    font-size: 15px;
+    margin-top: 2px;
+    margin-right: 0px;
+    border-radius: 5px;
+    width: 100px;
+    background-color: white;
+    border-style: groove;
+}
+
+.createTitle{
+    float: left;
+    font-family: Tahoma;
+    font-size: 15px;
+    margin-top: 8px;
+    border-radius: 5px;
+    height: 30px;
+    width: 825px;
+    background-color: white;
+    border-style: groove;
+}
+
+.createBody{
+    float: left;
+    font-family: Tahoma;
+    font-size: 15px;
+    border-radius: 5px;
+    height: 400px;
+    width: 825px;
+    background-color: white;
+    border-style: groove;
+
+}
+
+#createPublish{
+    float: right;
+    font-family: Tahoma;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    border-style: groove;
+}
+
+#backToTop{
+    float: right;
+    font-family: Tahoma;
+    font-size: 15px;
+    margin-top: 2px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: white;
+    border-style: groove;
+}
+
+#sitemap{
+    font-family: Tahoma;
+    font-size: 15px;
+    margin-top: 2px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: white;
+    border-style: groove;
+}
+
+#sitemapA{
+    text-decoration: none;
+}
