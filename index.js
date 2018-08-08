@@ -110,9 +110,20 @@ server.post('/create-post', function(req, resp){
 
 
 server.get('/post', function(req, resp){
-   resp.render('./pages/post');
+//    postModel.find({}, function (err, post){
+//        const passData = { post:post };
+//        resp.render('./pages/post',{ data:passData });
+//    });
+      console.log(req.query.title);
+      const findQuery = { title: req.query.title }
+      
+      postModel.findOne(findQuery, function (err, post) {
+        console.log(post);
+        resp.render('./pages/post', { data:post });
+        console.log("hi");
+      });
 });
-
+    
 server.get('/profile', function(req, resp){
    resp.render('./pages/profile');
 });
