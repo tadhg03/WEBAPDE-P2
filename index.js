@@ -125,7 +125,7 @@ server.get('/post', function(req, resp){
     
 server.get('/profile', function(req, resp){
     
-    console.log(req.query.username);
+    console.log(req.query.user);
     const findQuery = { user: req.query.user }
     
     loginModel.findOne(findQuery, function(err, login){
