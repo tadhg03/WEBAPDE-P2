@@ -13,5 +13,14 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "mongoose": "^5.2.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tadhg03/WEBAPDE-P2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tadhg03/WEBAPDE-P2/issues"
+  },
+  "homepage": "https://github.com/tadhg03/WEBAPDE-P2#readme"
 }
