@@ -124,7 +124,15 @@ server.get('/post', function(req, resp){
 });
     
 server.get('/profile', function(req, resp){
-   resp.render('./pages/profile');
+    
+    console.log(req.query.username);
+    const findQuery = { user: req.query.user }
+    
+    loginModel.findOne(findQuery, function(err, login){
+        console.log(login);
+        resp.render('./pages/profile', { data: login });
+        console.log("hello");
+    });
 });
 
 const port = process.env.PORT | 9090;
