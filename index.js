@@ -95,7 +95,7 @@ server.post('/create-post', function(req, resp){
   const postInstance = postModel({
     user: 'testUser',
     title: req.body.title,
-    desc: req.body.title,
+    desc: req.body.desc,
     content: req.body.content,
     likes: 0
   });
