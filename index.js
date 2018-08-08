@@ -1,6 +1,8 @@
 const express = require('express');
 const server = express();
 
+const crypto = require('crypto');
+
 //Require a MongoDB connection using mongoose. Include the mongoose library
 //and feed it the correct url to run MongoDB.
 //URL is the database it connects to.
@@ -53,7 +55,11 @@ const postModel = mongoose.model('post', postSchema);
 const commentModel = mongoose.model('comment', commentSchema);
 
 server.get('/', function(req, resp){
-   resp.render('./pages/index');
+    
+   postModel.find({}, function(err, post){
+       resp.render('./pages/index', { postData: post });
+   });
+    
 });
 
 server.get('/signin', function(req, resp){
@@ -62,9 +68,12 @@ server.get('/signin', function(req, resp){
 
 server.post('/signup', function(req, resp){
    //Creating a new instance can be made this way.
+  var password = req.body.pass;
+  var hashedPass = crypto.createHash('md5').update(password).digest('hex');
+
   const loginInstance = loginModel({
     user: req.body.user,
-    pass: req.body.pass,
+    pass: hashedPass,
     desc: req.body.desc
   });
   
@@ -72,12 +81,18 @@ server.post('/signup', function(req, resp){
   //it will have a call-back to check if it worked.
   loginInstance.save(function (err, fluffy) {
     if(err) return console.error(err);
-    resp.render('./pages/index');
+    postModel.find({}, function(err, post){
+       resp.render('./pages/index', { postData: post });
+    });
   });
 });
 
 server.post('/login', function(req, resp){
-  const searchQuery = { user: req.body.user, pass: req.body.pass };
+  
+  var password = req.body.pass;
+  var hashedPass = crypto.createHash('md5').update(password).digest('hex');      
+  
+  const searchQuery = { user: req.body.user, pass: hashedPass };
   var queryResult = 0;
 
   //The model can be found via a search query and the information is found
@@ -92,8 +107,11 @@ server.post('/login', function(req, resp){
       //displayed will depend on the information found and so the system
       //must wait for the results first.
       var strMsg;
-      if(queryResult === 1)
-        resp.render('./pages/index');
+      if(queryResult === 1){
+          postModel.find({}, function(err, post){
+            resp.render('./pages/index', { postData: post });
+          });
+      }
   });
   
 });
@@ -112,7 +130,9 @@ server.post('/create-post', function(req, resp){
   //it will have a call-back to check if it worked.
   postInstance.save(function (err, fluffy) {
     if(err) return console.error(err);
-    resp.render('./pages/index');
+    postModel.find({}, function(err, post){
+       resp.render('./pages/index', { postData: post });
+    });
   });
 });
 
@@ -146,16 +166,43 @@ server.get('/post', function(req, resp){
       });
     
 });
+
+server.get('/edit-comment', function(req, resp){
+    
+      console.log(req.query.comment + "edit((((((()))))))");
+      const editQuery = { comment: req.query.comment };
+
+      //To update a query, first it must found. Then afterwards, its information
+      //can be edited. Call the save function to update the changes.
+      commentModel.findOne(editQuery, function (err, comment) {
+        comment.content = req.query.editComment;
+        comment.save(function (err, result) {
+          if (err) return console.error(err);
+          const passData = { goodStatus: 1, msg:"Comment successfully edited" };
+          resp.render('./pages/editResult',{ data:passData });
+        });
+      });
+    
+});
     
 server.get('/profile', function(req, resp){
     
-    console.log(req.query.user);
-    const findQuery = { user: req.query.user }
+    var passDataComment;
+    var passDataPost;
     
+    postModel.find({}, function(err, post){
+       passDataPost = post; 
+    });
+
+    commentModel.find({}, function (err, comment){
+        console.log("inside commentmodel.find" + comment);
+        passDataComment = comment;
+    });
+    
+    const findQuery = { user: req.query.user }
+
     loginModel.findOne(findQuery, function(err, login){
-        console.log(login);
-        resp.render('./pages/profile', { data: login });
-        console.log("hello");
+        resp.render('./pages/profile', { data: login, commentData: passDataComment, postData: passDataPost });
     });
 });
 

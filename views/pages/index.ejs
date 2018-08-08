@@ -8,48 +8,25 @@
     </head>
 
     <body class="background">
-        <div class="header">
-            <a href="index.html"><img class="headerLogo" src="logo.png"> Hot Dawgs</a>
-            <a href="userprofile.html">My Profile</a>
-            <input name="search" type="text" placeholder="Search"/>
-            <a id="logout" href="login.html">Log Out</a>
-        </div>
+        <% include ./header.ejs %>
         <div class="container">
-            <div class="userPost">
-                <div class="userPhoto1"></div>
-                    <span class="info">
-                        <span class="title">
-                            <form action = "post" method="get">
-                                
-                                <input name="title" type="submit" value="The Queen's Dog Ran Away!"></input>
-                                
-                            </form>
-<!--                            <a name="title" href="/post" method="get">The Queen's Dog Ran Away!</a>-->
-                            
-                        </span>
-                        <span class="description">
-                            "Who  let this dog out? Brits were shocked upon finding out this news."
-                        </span>
-                        <span class="comment">12</span>
-                        <span class="downvote"></span>
-                        <span class="upvote"></span> 
-                </span>
-                <div class="author">
-                    <form action="profile" method="get">
-
-                        <input name="user" type="submit" value="pao">pao</input>
-                
-                    </form>        
-                </div>
-            </div>
+            <% for(var i=0;i<postData.length;i++){ %>
+                    <%- include('./indexPosts', {
+                        title: postData[i].title,
+                        desc: postData[i].desc,
+                        likes: postData[i].likes,
+                        user: postData[i].user
+                    }); %>
+            <% } %>
+<!--
             
             <div class="userPost">
                 <div class="userPhoto2"></div>
                     <span class="info">
                         <span class="title">
-                        <span class="title">
-                            <a href="post2.html">Bieber Buys Dog For Fiancee!</a>
-                            
+                            <form action = "post" method="get">
+                            <input name="title" type="submit" value="Bieber Buys Dog For Fiancee!"></input>
+                            </form>
                         </span>
                         <span class="description">
                             "Baldwin was so happy when she saw Bieber carrying a 2-month old bulldog."
@@ -296,6 +273,7 @@
                     <a href="userprofile.html">AlexRotorReyes</a>
                 </div>
             </div>  
+-->
         </div>
         <div class="footer">
             <div class="w3-container">

@@ -6,12 +6,7 @@
     </head>
 
     <body class="background"> 
-        <div class="header">
-            <a href="index.html"><img class="headerLogo" src="logo.png"> Hot Dawgs</a>
-            <a href="userprofile.html">My Profile</a>
-            <input name="search" type="text" placeholder="Search"/>
-            <a id="logout" href="login.html">Log Out</a>
-        </div>
+        <% include ./header.ejs %>
         
             <div class="displayUserwFlex">
                 <div class="displayUser">
@@ -20,58 +15,25 @@
                         <div class="usernameProfile">
                             <%= data.user %>
                         </div>
-                        <div class="commentsNumber">
-                            4
-                        </div>
-                        <div class="likesNumber">
-                            5
-                        </div>
-                        <div class="commentsText">
-                            Comments
-                        </div>
-                        <div class="likesText">
-                            Posts
-                        </div>
-                        <div class="comlikeSplit">
-                            |
-                        </div>
                     </div>
                 </div>
                 <div class="userDescription">
                     <%= data.desc %>
                 </div>
                 <div class="userFeed">
-                    <div class="userPost">
-                        <div class="postTitle">
-                            <a class="profileText" href="post1.html">The Queen's Dog Ran Away!</a>
-                        </div>
-                        <div class="postDesc">
-                            Who let this dog out? Brits were shocked upon finding out this news. 
-                        </div>
-                        <div class="commentsPart">
-                            <img class="dpComments" src="comment.png"> 3 Comments
-                        </div>
-                        <div class="editPart">
-                            <img class="dpComments" src="edit.png"> Edit
-                        </div>
-                        <div class="deletePart">
-                            <img class="dpComments" src="waste.png"> Delete
-                        </div>
-                        <div class="votePart">
-                            <div>
-                                <img class="smallUp" src="upvote.png">
-                            </div>
-                            <div>
-                                <img class="smallDown" src="downvote.png">
-                            </div>
-                            <div class="voteNumbers">
-                                12
-                            </div>
-                        </div>
-                        <div class="dateTime">
-                            July 9, 2018 12:47PM
-                        </div>
-                    </div>
+                    
+                    <!--This is for posts-->
+                    <% for(var i=0;i<postData.length;i++){ %>
+                        <% if(postData[i].user == data.user){%>
+                            <%- include('./profilePosts', {
+                                title: postData[i].title,
+                                desc: postData[i].desc,
+                                likes: postData[i].likes
+                            }); %>
+                        <% } %>
+                    <% } %>
+                    
+<!--
                     <div class="userPost">
                         <div class="postTitle">
                             <a class="profileText" href="post5.html">I Own The World's Largest Dog!</a>
@@ -103,34 +65,18 @@
                             July 4, 2018 2:14PM
                         </div>
                     </div>
-                    <div class="userPost">
-                        <div class="usernameCommented">
-                            <a class="profileText" href="post4.html">AlexRotorReyes commented on TadhgMcCarthy's post.</a>
-                        </div>
-                        <div class="actualComment">
-                            "OMG!!! THAT IS SO FUNNYYYY HAHAHAH"
-                        </div>
-                        <div class="commentDate">
-                            June 29, 2018 6:31PM
-                        </div>
-                        <div class="editComment">
-                            <img class="dpComments" src="edit.png"> Edit
-                        </div>
-                        <div class="deleteComment">
-                            <img class="dpComments" src="waste.png"> Delete
-                        </div>
-                        <div class="votePart">
-                            <div>
-                                <img class="smallUp" src="upvote.png">
-                            </div>
-                            <div>
-                                <img class="smallDown" src="downvote.png">
-                            </div>
-                            <div class="voteNumbers">
-                                2
-                            </div>
-                        </div>
-                    </div>
+-->
+                    <!--This is for comments-->
+                    <% for(var i=0;i<commentData.length;i++){ %>
+                        <% if(commentData[i].user == data.user){%>
+                            <%- include('./profileComments', {
+                                user: commentData[i].user,
+                                content: commentData[i].content,
+                                parentPost: commentData[i].parentPost
+                            }); %>
+                        <% } %>
+                    <% } %>
+<!--
                     <div class="userPost">
                         <div class="usernameCommented">
                             <a class="profileText" href="post3.html">AlexRotorReyes commented on PaoloDelosReyes' post.</a>
@@ -159,6 +105,8 @@
                             </div>
                         </div>
                     </div>
+-->
+<!--
                     <div class="userPost">
                         <div class="postTitle">
                             Can Dogs Eat Chocolates?!
@@ -190,6 +138,7 @@
                             Jan 1, 2018 11:25AM
                         </div>
                     </div>
+-->
                     <div class="seeMore">
                         See More
                     </div>

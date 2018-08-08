@@ -11,12 +11,7 @@
     </head>
 
     <body class="background">      
-        <div class="header">
-            <a href="index.html"><img class="headerLogo" src="logo.png"> Hot Dawgs</a>
-            <a href="userprofile.html">My Profile</a>
-            <input name="search" type="text" placeholder="Search"/>
-            <a id="logout" href="login.html">Log Out</a>
-        </div>
+        <% include ./header.ejs %>
         <br>
         <% console.log("hereeee " + commentData.length) %>
         <div id="info" class="border">
@@ -64,10 +59,12 @@
             </div>
                 
             <% for(var i=0;i<commentData.length;i++){ %>
-                <%- include('./comments', {
-                    user: commentData[i].user,
-                    content: commentData[i].content
-                }); %>
+                <% if(commentData[i].parentPost == data.title){%>
+                    <%- include('./comments', {
+                        user: commentData[i].user,
+                        content: commentData[i].content
+                    }); %>
+                <% } %>
             <% } %>
                 
             </div>

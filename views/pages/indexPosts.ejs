@@ -1,0 +1,27 @@
+<div class="userPost">
+    <div class="userPhoto1"></div>
+        <span class="info">
+            <span class="title">
+                <form action = "post" method="get">
+
+                    <input name="title" type="submit" value="<%=title%>"></input>
+
+                </form>
+<!--                <a name="title" href="/post" value="<%= title %>"><%= title %></a>-->
+
+            </span>
+            <span class="description">
+                <%=desc%>
+            </span>
+            <span class="comment"><%=likes%></span>
+            <span class="downvote"></span>
+            <span class="upvote"></span> 
+        </span>
+    <div class="author">
+        <form action="profile" method="get">
+
+            <input name="user" type="submit" value="<%=user%>"></input>
+
+        </form>        
+    </div>
+</div>
