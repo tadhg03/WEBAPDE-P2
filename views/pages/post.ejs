@@ -25,10 +25,11 @@
             
             <div>
                 <div class="details font">
-                    <button class="profile"><a class="commentNameClickable" href="userprofile.html">AlexRotorReyes</a></button> <span>07/12/2018 1:02</span>
+                    <button class="profile"><a class="commentNameClickable" href="userprofile.html"><%= data.user %></a></button> 
+                    <span>07/12/2018 1:02</span>
                 </div>
                 <div class="title font">
-                    <span>The Queen's Dog Ran Away!</span>
+                    <span><%= data.title %></span>
                 </div>
             </div>
             <div class="vote">
@@ -40,22 +41,15 @@
                     <button class="voteBtn"><img src ="downvote.png" class="voteImg"></button>
                     </div>
                 </div>    
-                <span class="voteCount font">12</span>
+                <span class="voteCount font"><%= data.likes %></span>
             </div>
         </div>
         <br>
         <div class="contentContainer border font">
             <div class="content">
-                Who let this dog out? Brits were shocked upon finding out this news.<br><br>
-                View all<br />
-                  <%= data.user %>
-<!--
-                      id: data.login[i]._id,
-                      user: data.login[i].user,
-                      pass: data.login[i].pass
-                  %>
--->
-                Earlier this morning, while I was walking down the one of the streets neaby my house, I swear that I saw the Queen's dog. I believe it was willow because it looked just like him! A small corgi who was wearing the collar I heard that only the Queens dog wears!!!
+                <%= data.desc %><br><br>
+                  
+                <%= data.content %>
             </div>
         </div>
         <br>
