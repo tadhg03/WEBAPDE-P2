@@ -32,7 +32,14 @@ const postSchema = new mongoose.Schema({
   desc: { type: String },
   content: { type: String },
   likes: { type: Number },
-  //add time
+  //add time and picture
+},{versionKey: false});
+
+const commentSchema = new mongoose.Schema({
+  parentPost: { type: String },
+  user: { type: String },
+  content: { type: String },
+  //add time and picture
 },{versionKey: false});
 
 //Note: mongoose will add an extra 's' at the end of the schema. So even if
@@ -43,6 +50,7 @@ const postSchema = new mongoose.Schema({
 //with while the program is running.
 const loginModel = mongoose.model('login', loginSchema);
 const postModel = mongoose.model('post', postSchema);
+const commentModel = mongoose.model('comment', commentSchema);
 
 server.get('/', function(req, resp){
    resp.render('./pages/index');
@@ -109,18 +117,34 @@ server.post('/create-post', function(req, resp){
 });
 
 server.get('/post', function(req, resp){
-//    postModel.find({}, function (err, post){
-//        const passData = { post:post };
-//        resp.render('./pages/post',{ data:passData });
-//    });
-      console.log(req.query.title);
+    
+      var passData;
+      console.log(req.query.comment + "here comment here comment here");
+      if(req.query.comment != null || req.query.comment != undefined || req.query.comment == ''){
+          const commentInstance = commentModel({
+            user: 'testUser',
+            content: req.query.comment,
+            parentPost: req.query.title
+          });
+
+          //to save this into the database, call the instance's save function.
+          //it will have a call-back to check if it worked.
+          commentInstance.save(function (err, fluffy) {
+            if(err) return console.error(err);
+          });
+      }
+    
+      commentModel.find({}, function (err, comment){
+        passData = comment;
+      });
+    
       const findQuery = { title: req.query.title }
       
       postModel.findOne(findQuery, function (err, post) {
-        console.log(post);
-        resp.render('./pages/post', { data:post });
-        console.log("hi");
+        console.log("found");
+        resp.render('./pages/post', { data:post, commentData: passData });
       });
+    
 });
     
 server.get('/profile', function(req, resp){

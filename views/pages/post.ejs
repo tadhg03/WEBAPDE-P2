@@ -18,6 +18,7 @@
             <a id="logout" href="login.html">Log Out</a>
         </div>
         <br>
+        <% console.log("hereeee " + commentData.length) %>
         <div id="info" class="border">
             <div id="avatarDiv">
                 <img src="alexcrop.png" id="avatarImg" alt="avatar">
@@ -29,7 +30,7 @@
                     <span>07/12/2018 1:02</span>
                 </div>
                 <div class="title font">
-                    <span><%= data.title %></span>
+                    <span name="title"><%= data.title %></span>
                 </div>
             </div>
             <div class="vote">
@@ -55,156 +56,20 @@
         <br>
         <div id="comments" class="border font">
             <div class="myComment">
-                <textarea class="inputComment" cols="30" rows="10" placeholder="Enter comment here"></textarea>
+                <form action = "post" method="get">
+                    <textarea name="comment" class="inputComment" cols="30" rows="10" placeholder="Enter comment here"></textarea>
+                    
+                    <input name="title" type="submit" value="<%= data.title %>"> <--- press this to submit
+                </form>
             </div>
-            <div class="CommentContainer">
-                <div class="sharing">
-                    <div class="voteComment">
-                        <div>
-                            <div>
-                                <button class="voteBtn"><img src="upvote.png" class="voteImg"></button>
-                            </div>
-                            <div>    
-                                <button class="voteBtn"><img src ="downvote.png" class="voteImg"></button>
-                            </div>
-                        </div>    
-                        <span class="voteCount font">14</span>
-                    </div>
-                </div>
-                <div class="commentDetails">
-                    <div class ="commentNameTime"><button class="profile" ><a class="commentNameClickable" href="userprofilePao.html">PaoloDelosReyes</a></button> <span>07/12/2018 2:03</span></div>
-                    <div class ="commentProper">OMG!!!! How'd he look like??</div>
-                    <div class="replyContainer">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                            <img src="reply.png" class="replyImg font"> Reply
-                        </button>
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalCenterTitle">Comment</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                <textarea class="inputReply" cols="30" rows="10" placeholder="Enter comment here"></textarea>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button type="button" class="btn"> 
-                            <img src="edit.png" class="replyImg font"> Edit
-                        </button>
-                        <button type="button" class="btn btnDel"> 
-                            <img src="waste.png" class="replyImg font"> Delete
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="CommentContainer indent1">
-                <div class="sharing">
-                    <div class="voteComment">
-                        <div>
-                            <div>
-                                <button class="voteBtn"><img src="upvote.png" class="voteImg"></button>
-                            </div>
-                            <div>    
-                                <button class="voteBtn"><img src ="downvote.png" class="voteImg"></button>
-                            </div>
-                        </div>    
-                        <span class="voteCount font">8</span>
-                    </div>
-                </div>
-                <div class="commentDetails">
-                    <div class ="commentNameTime"><button class="profile"><a class="commentNameClickable" href="userprofileTadhg.html">TadhgMcCarthy</a></button> <span>07/12/2018 3:04</span></div>
-                    <div class ="commentProper">WAS HE BROWN WITH A WHITE UNDER BELLY?</div>
-                    <div class="replyContainer">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                            <img src="reply.png" class="replyImg font"> Reply
-                        </button>
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalCenterTitle">Comment</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                <textarea class="inputReply" cols="30" rows="10" placeholder="Enter comment here"></textarea>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button type="button" class="btn"> 
-                            <img src="edit.png" class="replyImg font"> Edit
-                        </button>
-                        <button type="button" class="btn btnDel"> 
-                            <img src="waste.png" class="replyImg font"> Delete
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="CommentContainer">
-                <div class="sharing">
-                    <div class="voteComment">
-                        <div>
-                            <div>
-                                <button class="voteBtn"><img src="upvote.png" class="voteImg"></button>
-                            </div>
-                            <div>    
-                                <button class="voteBtn"><img src ="downvote.png" class="voteImg"></button>
-                            </div>
-                        </div>    
-                        <span class="voteCount font">18</span>
-                    </div>
-                </div>
-                <div class="commentDetails new">
-                    <div class ="commentNameTime"><button class="profile"><a class="commentNameClickable" href="userprofile.html">AlexRotorReyes</a></button> <span>07/12/2018 4:05</span></div>
-                    <div class ="commentProper">It's ok guys! I managed to follow the dog and hand it over to the police haha.</div>
-                    <div class="replyContainer">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                            <img src="reply.png" class="replyImg font"> Reply
-                        </button>
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalCenterTitle">Comment</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
-                                <textarea class="inputReply" cols="30" rows="10" placeholder="Enter comment here"></textarea>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <button type="button" class="btn"> 
-                            <img src="edit.png" class="replyImg font"> Edit
-                        </button>
-                        <button type="button" class="btn btnDel"> 
-                            <img src="waste.png" class="replyImg font"> Delete
-                        </button>
-                    </div>
-                </div>
+                
+            <% for(var i=0;i<commentData.length;i++){ %>
+                <%- include('./comments', {
+                    user: commentData[i].user,
+                    content: commentData[i].content
+                }); %>
+            <% } %>
+                
             </div>
         </div>
     </body>
