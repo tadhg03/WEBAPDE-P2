@@ -237,18 +237,28 @@ input:hover{
     border-style: groove;
 }
 
+.createDesc{
+    float: left;
+    font-family: Tahoma;
+    font-size: 15px;
+    margin-top: 0px;
+    border-radius: 5px;
+    height: 30px;
+    width: 825px;
+    background-color: white;
+    border-style: groove;
+}
+
 .createBody{
     float: left;
     font-family: Tahoma;
     font-size: 15px;
     border-radius: 5px;
-    height: 400px;
+    height: 375px;
     width: 825px;
     background-color: white;
     border-style: groove;
-
 }
-
 #createPublish{
     float: right;
     font-family: Tahoma;
