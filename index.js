@@ -90,12 +90,6 @@ server.post('/login', function(req, resp){
   
 });
 
-
-//adasdasdasdasd
-
-
-
-
 server.post('/create-post', function(req, resp){
     //Creating a new instance can be made this way.
   const postInstance = postModel({
