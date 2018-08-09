@@ -1,0 +1,83 @@
+.userPost{
+    margin-top: 5px;
+    margin-left: 5px;
+    border-style: groove;
+    background: white;
+    width: 100%;
+    height: 87px;
+    border-radius: 5px;
+}
+
+.userPhoto{
+    float:left;
+    height: 45px;
+    width: 45px;
+    margin-top: 2px;
+    margin-right: 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-image:url(snoop.jpg);
+}
+
+.titleName{
+    width: 400px;
+    height: 30px;
+    margin-left:35%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    border-radius: 5px;
+    border-style: groove;
+    font-family: Tahoma;
+}
+
+.title a{
+    font-family: Tahoma;
+    font-weight: bold;
+    color: dimgrey;
+}
+
+.description{
+    height: 45px;
+    width: 600px;
+    font-family: Tahoma;
+    font-style: italic;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.downvote{
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-top: 9px;
+    margin-right: 10px;
+    margin-left: 5px;
+    background-image: url(downvote.png);
+}
+
+.comment{
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-top: -2px;
+    margin-right: 10px;
+    margin-left: 5px;
+    font-family: Tahoma;
+}
+
+.upvote{
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-top: 9px;
+    margin-right: 10px;
+    margin-left: 5px;
+    background-image: url(upvote.png);
+}
+
+.author{
+    font-family: Tahoma;
+    color: black;
+    margin-top: 0px;
+    margin-left: 60px;
+}
