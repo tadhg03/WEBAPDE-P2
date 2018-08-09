@@ -60,10 +60,39 @@
                 
             <% for(var i=0;i<commentData.length;i++){ %>
                 <% if(commentData[i].parentPost == data.title){%>
-                    <%- include('./comments', {
-                        user: commentData[i].user,
-                        content: commentData[i].content
-                    }); %>
+                    <div class="CommentContainer">
+                        <div class="commentDetails">
+                            <div class ="commentNameTime"><button class="profile" ><a class="commentNameClickable" href="userprofilePao.html"><%= commentData[i].user %></a></button> <span>07/12/2018 2:03</span></div>
+                            <div class ="commentProper"><%= commentData[i].content %> </div>
+                            <div class="replyContainer">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2"> 
+                                    <img src="./imgs/edit.png" class="replyImg font"> Edit
+                                </button>
+                                <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <form action="edit-comment" method="get">
+                                        <h5 name="comment" class="modal-title" id="exampleModalCenterTitle"><%= commentData[i].content %></h5>
+                                        <% console.log(commentData[i].content + "this is the conten of i") %>
+                                      </div>
+                                      <div class="modal-body">
+                                        <textarea name="editComment" class="inputReply" cols="30" rows="10" placeholder="Edit comment here"></textarea>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <button type="button" class="btn btnDel"> 
+                                    <img src="./imgs/waste.png" class="replyImg font"> Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 <% } %>
             <% } %>
                 

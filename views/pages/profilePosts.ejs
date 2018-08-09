@@ -1,6 +1,8 @@
 <div class="userPost">
     <div class="postTitle">
-        <a class="profileText" href="post1.html"><%= title %></a>
+        <form action = "post" method="get">
+            <input name="title" type="submit" value="<%=title%>"/>
+        </form>
     </div>
     <div class="postDesc">
         <%= desc %>
@@ -9,17 +11,17 @@
 <!--        <img class="dpComments" src="comment.png"> 3 Comments-->
     </div>
     <div class="editPart">
-        <img class="dpComments" src="edit.png"> Edit
+        <img class="dpComments" src="./imgs/edit.png"> Edit
     </div>
     <div class="deletePart">
-        <img class="dpComments" src="waste.png"> Delete
+        <img class="dpComments" src="./imgs/waste.png"> Delete
     </div>
     <div class="votePart">
         <div>
-            <img class="smallUp" src="upvote.png">
+            <img class="smallUp" src="./imgs/upvote.png">
         </div>
         <div>
-            <img class="smallDown" src="downvote.png">
+            <img class="smallDown" src="./imgs/downvote.png">
         </div>
         <div class="voteNumbers">
             <%= likes %>

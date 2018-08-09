@@ -1,6 +1,10 @@
 <div class="userPost">
     <div class="usernameCommented">
-        <a class="profileText" href="post4.html"><%= user %> commented on "<%= parentPost %>"</a>
+        <form action = "post" method="get">
+            <%= user %> commented on '
+            <input name="title" type="submit" value="<%= parentPost %>"/>
+            '
+        </form>
     </div>
     <div class="actualComment">
         <%= content %>
@@ -9,9 +13,9 @@
         June 29, 2018 6:31PM
     </div>
     <div class="editComment">
-        <img class="dpComments" src="edit.png"> Edit
+        <img class="dpComments" src="./imgs/edit.png"> Edit
     </div>
     <div class="deleteComment">
-        <img class="dpComments" src="waste.png"> Delete
+        <img class="dpComments" src="./imgs/waste.png"> Delete
     </div>
 </div>

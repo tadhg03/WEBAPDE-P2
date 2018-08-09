@@ -24,7 +24,8 @@ server.use(express.static(__dirname + '/public'));
 const loginSchema = new mongoose.Schema({
   user: { type: String },
   pass: { type: String },
-  desc: { type: String }
+  desc: { type: String },
+  dp  : { type: String }
 },{ versionKey: false });
 
 //this is the schema for our posts
@@ -74,7 +75,8 @@ server.post('/signup', function(req, resp){
   const loginInstance = loginModel({
     user: req.body.user,
     pass: hashedPass,
-    desc: req.body.desc
+    desc: req.body.desc,
+    dp: 'default.png'
   });
   
   //to save this into the database, call the instance's save function.
@@ -119,7 +121,7 @@ server.post('/login', function(req, resp){
 server.post('/create-post', function(req, resp){
     //Creating a new instance can be made this way.
   const postInstance = postModel({
-    user: 'testUser',
+    user: 'AlexRotorReyes',
     title: req.body.title,
     desc: req.body.desc,
     content: req.body.content,
@@ -142,7 +144,7 @@ server.get('/post', function(req, resp){
       console.log(req.query.comment + "here comment here comment here");
       if(req.query.comment != null || req.query.comment != undefined || req.query.comment == ''){
           const commentInstance = commentModel({
-            user: 'testUser',
+            user: 'AlexRotorReyes',
             content: req.query.comment,
             parentPost: req.query.title
           });
