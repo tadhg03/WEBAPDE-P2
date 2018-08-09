@@ -21,7 +21,12 @@
             
             <div>
                 <div class="details font">
-                    <button class="profile"><a class="commentNameClickable" href="userprofile.html"><%= data.user %></a></button> 
+                    <form action="profile" method="get">
+                        
+                        <input name="user" type="submit" value="<%=data.user%>"> </input>
+                        
+                    </form>
+<!--                    <button class="profile"><a class="commentNameClickable" href="userprofile.html"><%= data.user %></a></button> -->
                     <span>07/12/2018 1:02</span>
                 </div>
                 <div class="title font">
@@ -31,10 +36,10 @@
             <div class="vote">
                 <div>
                     <div>
-                    <button class="voteBtn"><img src="upvote.png" class="voteImg"></button>
+                    <button class="voteBtn"><img src="./imgs/upvote.png" class="voteImg"></button>
                     </div>
                     <div>    
-                    <button class="voteBtn"><img src ="downvote.png" class="voteImg"></button>
+                    <button class="voteBtn"><img src ="./imgs/downvote.png" class="voteImg"></button>
                     </div>
                 </div>    
                 <span class="voteCount font"><%= data.likes %></span>
@@ -62,7 +67,17 @@
                 <% if(commentData[i].parentPost == data.title){%>
                     <div class="CommentContainer">
                         <div class="commentDetails">
-                            <div class ="commentNameTime"><button class="profile" ><a class="commentNameClickable" href="userprofilePao.html"><%= commentData[i].user %></a></button> <span>07/12/2018 2:03</span></div>
+                            <div class ="commentNameTime">
+                                
+                                <form action="profile" method="get">
+                        
+                                    <input name="user" type="submit" value="<%=commentData[i].user%>"> </input>
+                        
+                                </form>
+                                
+                                <span>07/12/2018 2:03</span>
+                                
+                            </div>
                             <div class ="commentProper"><%= commentData[i].content %> </div>
                             <div class="replyContainer">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2"> 
