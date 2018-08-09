@@ -90,6 +90,7 @@
 
 .title{
     font-size: 35;
+    margin-top: -18px;
 }
 
 .vote{
@@ -197,6 +198,8 @@
     font-family: Tahoma;
     font-size: 16;
     margin-left: 6px;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 .replyContainer{
@@ -307,4 +310,27 @@
 .modalTextInput{
     height: 200px;
     width: 200px;
+}
+
+.prflName{
+    background-color: white;
+    border: none;
+}
+
+.prflName:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cmntName{
+    background-color: white;
+}
+.cmntName:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.editBtn{
+    border: solid;
+    width: 180px;
 }

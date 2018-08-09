@@ -23,11 +23,9 @@
                 <div class="details font">
                     <form action="profile" method="get">
                         
-                        <input name="user" type="submit" value="<%=data.user%>"> </input>
+                        <input class="prflName" name="user" type="submit" value="<%=data.user%>"> 07/12/2018 1:02PM
                         
                     </form>
-<!--                    <button class="profile"><a class="commentNameClickable" href="userprofile.html"><%= data.user %></a></button> -->
-                    <span>07/12/2018 1:02</span>
                 </div>
                 <div class="title font">
                     <span name="title"><%= data.title %></span>
@@ -71,15 +69,13 @@
                                 
                                 <form action="profile" method="get">
                         
-                                    <input name="user" type="submit" value="<%=commentData[i].user%>"> </input>
+                                    <input class="cmntName" name="user" type="submit" value="<%=commentData[i].user%>"> 07/12/2018 2:03PM
                         
                                 </form>
                                 
-                                <span>07/12/2018 2:03</span>
-                                
                             </div>
                             <div class ="commentProper"><%= commentData[i].content %> </div>
-                            <div class="replyContainer">
+                            <div class="editBtn" class="replyContainer">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2"> 
                                     <img src="./imgs/edit.png" class="replyImg font"> Edit
                                 </button>
