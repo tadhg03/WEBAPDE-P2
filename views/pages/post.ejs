@@ -10,13 +10,21 @@
         <link rel="stylesheet" href="./common/post-style.css" />
     </head>
 
+    <% var fDP = "default.png"; %>
+
+    <% for(var i = 0; i < loginData.length; i++){ %>
+        <% if(loginData[i].user == data.user){ %>
+            <% fDP = loginData[i].dp %>
+        <% } %>
+    <% } %>
+    
     <body class="background">      
         <% include ./header.ejs %>
         <br>
         <% console.log("hereeee " + commentData.length) %>
         <div id="info" class="border">
             <div id="avatarDiv">
-                <img src="./imgs/default.png" id="avatarImg" alt="avatar">
+                <img src="./imgs/<%=fDP%>" id="avatarImg" alt="avatar">
             </div>
             
             <div>

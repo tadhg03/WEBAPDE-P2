@@ -1,5 +1,13 @@
+<% var fDP = "default.png"; %>
+
+<% for(var i = 0; i < loginData.length; i++){ %>
+                <% if(loginData[i].user == user){ %>
+                    <% fDP = loginData[i].dp %>
+                <% } %>
+        <%    } %>
+
 <div class="userPost">
-    <div class="userPhoto"></div>
+    <div><img class="userPhoto" src="./imgs/<%=fDP%>"></img></div>
         <span class="info">
             <span class="title">
                 <form action = "post" method="get">

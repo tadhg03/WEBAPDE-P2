@@ -57,8 +57,14 @@ const commentModel = mongoose.model('comment', commentSchema);
 
 server.get('/', function(req, resp){
     
+   var passDataLogin;
+    
+   loginModel.find({}, function(err, login){
+       passDataLogin = login; 
+    });
+    
    postModel.find({}, function(err, post){
-       resp.render('./pages/index', { postData: post });
+       resp.render('./pages/index', { postData: post, loginData: passDataLogin });
    });
     
 });
@@ -72,6 +78,12 @@ server.post('/signup', function(req, resp){
   var password = req.body.pass;
   var hashedPass = crypto.createHash('md5').update(password).digest('hex');
 
+  var passDataLogin;
+    
+   loginModel.find({}, function(err, login){
+       passDataLogin = login; 
+   });
+    
   const loginInstance = loginModel({
     user: req.body.user,
     pass: hashedPass,
@@ -84,7 +96,7 @@ server.post('/signup', function(req, resp){
   loginInstance.save(function (err, fluffy) {
     if(err) return console.error(err);
     postModel.find({}, function(err, post){
-       resp.render('./pages/index', { postData: post });
+       resp.render('./pages/index', { postData: post, loginData: passDataLogin });
     });
   });
 });
@@ -94,6 +106,12 @@ server.post('/login', function(req, resp){
   var password = req.body.pass;
   var hashedPass = crypto.createHash('md5').update(password).digest('hex');      
   
+  var passDataLogin;
+    
+   loginModel.find({}, function(err, login){
+       passDataLogin = login; 
+   });
+    
   const searchQuery = { user: req.body.user, pass: hashedPass };
   var queryResult = 0;
 
@@ -111,7 +129,7 @@ server.post('/login', function(req, resp){
       var strMsg;
       if(queryResult === 1){
           postModel.find({}, function(err, post){
-            resp.render('./pages/index', { postData: post });
+            resp.render('./pages/index', { postData: post, loginData: passDataLogin });
           });
       }
   });
@@ -119,6 +137,13 @@ server.post('/login', function(req, resp){
 });
 
 server.post('/create-post', function(req, resp){
+    
+   var passDataLogin;
+    
+   loginModel.find({}, function(err, login){
+       passDataLogin = login; 
+   });    
+    
     //Creating a new instance can be made this way.
   const postInstance = postModel({
     user: 'AlexRotorReyes',
@@ -133,12 +158,18 @@ server.post('/create-post', function(req, resp){
   postInstance.save(function (err, fluffy) {
     if(err) return console.error(err);
     postModel.find({}, function(err, post){
-       resp.render('./pages/index', { postData: post });
+       resp.render('./pages/index', { postData: post, loginData: passDataLogin });
     });
   });
 });
 
 server.get('/post', function(req, resp){
+      
+      var passDataLogin;
+    
+      loginModel.find({}, function(err, login){
+       passDataLogin = login; 
+      });
     
       var passData;
       console.log(req.query.comment + "here comment here comment here");
@@ -164,14 +195,14 @@ server.get('/post', function(req, resp){
       
       postModel.findOne(findQuery, function (err, post) {
         console.log("found");
-        resp.render('./pages/post', { data:post, commentData: passData });
+        resp.render('./pages/post', { data:post, commentData: passData, loginData: passDataLogin });
       });
     
 });
 
 server.get('/edit-comment', function(req, resp){
     
-      console.log(req.query.comment + "edit((((((()))))))");
+//      console.log(req.query.comment + "edit((((((()))))))");
       const editQuery = { comment: req.query.comment };
 
       //To update a query, first it must found. Then afterwards, its information
